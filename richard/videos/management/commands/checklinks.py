@@ -15,11 +15,11 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+from collections import Counter
 from optparse import make_option
 from django.core.management.base import BaseCommand, CommandError
-import requests
 
-from richard.videos.models import Video
+from richard.videos.models import Video, VideoUrlStatus
 
 
 class Command(BaseCommand):
@@ -50,6 +50,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         self.verbose = int(options.get('verbosity'))
         checked = 0
+        status_counter = Counter()
 
         if options['all']:
             videos = Video.objects.all()
@@ -63,41 +64,12 @@ class Command(BaseCommand):
         total = len(videos)
 
         for ind, v in enumerate(videos):
-            self.log('%d/%d: Checking URLs for id %s video %s' % (ind, total, v.id, v.title))
-            self.check_video(v)
+            self.log('%d/%d: Checking URLs for id %s video %s' % (ind, total, v.id, v.title), min_verbose=2)
+            status_counter += VideoUrlStatus.objects.create_for_video(v)
             checked += 1
-
         self.log('Checked %d videos\n' % checked)
+        self.log(unicode(status_counter))
 
-
-    def check_video(self, v):
-        """ make a HEAD request against all URLFields in a Video
-
-        If something fails, print it out.
-        """
-        urls = self.all_urls(v)
-
-        for url in urls:
-            try:
-                r = requests.head(url)
-                if not r.ok:
-                    self.log('FAIL: status %s video %s URL %s' % (r.status_code, v.id, url))
-            except requests.exceptions.RequestException:
-                self.log('FAIL: requests call failed for video %s URL %s' % (v.id, url))
-            else:
-                self.log('SUCCESSS: video %s URL %s' % (v.id, url))
-
-
-    def all_urls(self, video):
-        """ returns a list of all the poopulated URLs of this Video
-        maybe later we want to be clever and introspect for URLFields?
-        """
-        return [url for url in [
-            video.thumbnail_url, video.video_ogv_url, video.video_mp4_url,
-            video.video_webm_url, video.video_flv_url, video.source_url,
-        ] if url is not None and url != '']
-
-
-    def log(self, msg):
-        if self.verbose:
+    def log(self, msg, min_verbose=1):
+        if self.verbose >= min_verbose:
             self.stdout.write(msg)
