@@ -1,5 +1,6 @@
 # Override settings for test environment here
 
+from .base import *
 import os
 
 # site_root is the parent directory
@@ -22,3 +23,6 @@ DATABASES = {
 API = True
 
 SECRET_KEY = 'richard-test'
+LOGGING['loggers']['south'] = {'handlers': ['null_handler'],
+                               'level': 'DEBUG',
+                               'propagate': False}

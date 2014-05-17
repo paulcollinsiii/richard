@@ -7,7 +7,6 @@
 
 import imp
 import os
-import sys
 
 # site_root is the parent directory
 SITE_ROOT = os.path.dirname(os.path.dirname(__file__))
@@ -48,7 +47,7 @@ MANAGERS = ADMINS
 BROWSERID_CREATE_USER = False
 
 # Verification class for django-browserid.
-BROWSERID_VERIFY_CLASS = 'richard.base.browserid.RichardVerify'
+BROWSERID_VERIFY_CLASS = 'base.browserid.RichardVerify'
 
 # The (width, height) to use when you tell richard to pull down remote
 # thumbnails, resize them, and store them locally.
@@ -184,7 +183,7 @@ MIDDLEWARE_CLASSES = (
     # Uncomment the next line for simple clickjacking protection:
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'richard.base.middleware.BrowserDetectMiddleware',
+    'base.middleware.BrowserDetectMiddleware',
 
     # This should probably be last. It catches 404 errors, then checks
     # to see if we should be redirecting the url.
@@ -208,7 +207,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.static',
     "django.core.context_processors.request",
 
-    'richard.base.context_processors.base',
+    'base.context_processors.base',
 )
 
 INSTALLED_APPS = (
@@ -229,11 +228,11 @@ INSTALLED_APPS = (
     'rest_framework.authtoken',
     'eadred',
 
-    'richard.base',
-    'richard.notifications',
-    'richard.pages',
-    'richard.suggestions',
-    'richard.videos',
+    'base',
+    'notifications',
+    'pages',
+    'suggestions',
+    'videos',
 )
 
 AUTHENTICATION_BACKENDS = (
@@ -275,6 +274,10 @@ LOGGING = {
         }
     },
     'handlers': {
+        'null_handler': {
+            'level': 'DEBUG',
+            'class': 'logging.NullHandler'
+        },
         'mail_admins': {
             'level': 'ERROR',
             'filters': ['require_debug_false'],
@@ -294,15 +297,3 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 # Modify this list to prevent spam messages in public suggestions
 SPAM_WORDS = []
-
-try:
-    from richard.settings_local import *
-except ImportError:
-    pass
-
-
-if 'test' in sys.argv:
-    try:
-        from richard.settings_test import *
-    except ImportError:
-        pass
