@@ -28,7 +28,7 @@ from haystack.query import SearchQuerySet
 from rest_framework import generics
 from rest_framework import permissions
 
-from richard.videos import models
+from videos import models
 
 
 def split_year(title):

@@ -19,9 +19,9 @@ import uuid
 from django.utils.six import text_type
 from django.utils.text import slugify
 
-from richard.videos.models import (
+from videos.models import (
     Category, Speaker, Tag, Video, RelatedUrl, Language)
-from richard.base.tests import with_save
+from base.tests import with_save
 
 
 @with_save

@@ -18,7 +18,7 @@ from django.conf.urls import patterns, url
 
 
 urlpatterns = patterns(
-    'richard.suggestions.views',
+    'suggestions.views',
 
     url(r'^videos/?$', 'suggestions', name='suggestions-list'),
 )

@@ -19,8 +19,8 @@ from datetime import datetime, timedelta
 from django.test import TestCase
 from nose.tools import eq_
 
-from richard.notifications.tests import notification
-from richard.notifications.models import Notification
+from notifications.tests import notification
+from notifications.models import Notification
 
 
 class TestNotification(TestCase):

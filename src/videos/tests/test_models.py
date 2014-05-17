@@ -18,8 +18,8 @@ from django.test import TestCase
 from httmock import urlmatch, HTTMock
 from nose.tools import eq_
 
-from richard.videos.tests import video
-from richard.videos import models
+from videos.tests import video
+from videos import models
 
 
 class TestVideoModel(TestCase):

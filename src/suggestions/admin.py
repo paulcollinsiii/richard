@@ -16,7 +16,7 @@
 
 from django.contrib import admin
 
-from richard.suggestions.models import Suggestion
+from suggestions.models import Suggestion
 
 
 def mark_as_spam(modeladmin, request, queryset):

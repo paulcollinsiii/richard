@@ -21,9 +21,9 @@ from django.conf.urls import patterns, url
 urlpatterns = patterns(
     '',
 
-    url(r'^$', 'richard.base.views.home', name='home'),
-    url(r'^login-failure$', 'richard.base.views.login_failure',
+    url(r'^$', 'base.views.home', name='home'),
+    url(r'^login-failure$', 'base.views.login_failure',
         name='login_failure'),
     url(r'^new_user$', 'new_user', name='new_user'),
-    url(r'^stats/$', 'richard.base.views.stats', name='stats'),
+    url(r'^stats/$', 'base.views.stats', name='stats'),
 )

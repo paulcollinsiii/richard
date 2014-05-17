@@ -16,8 +16,8 @@
 
 from datetime import date, timedelta
 
-from richard.base.tests import with_save
-from richard.notifications import models
+from base.tests import with_save
+from notifications import models
 
 
 @with_save

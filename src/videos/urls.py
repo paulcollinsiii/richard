@@ -17,16 +17,16 @@
 from django.conf import settings
 from django.conf.urls import patterns, url
 
-from richard.videos.feeds import (
+from videos.feeds import (
     CategoryFeed, CategoryVideosFeed, SpeakerVideosFeed,
     NewPostedVideoFeed)
-from richard.videos.views import (
+from videos.views import (
     CategoryListAPI, CategoryRetrieveAPI, VideoListCreateAPI,
     VideoRetrieveUpdateAPI, SpeakerListAPI)
 
 
 urlpatterns = patterns(
-    'richard.videos.views',
+    'videos.views',
 
     # categories
     url(r'^category/?$',

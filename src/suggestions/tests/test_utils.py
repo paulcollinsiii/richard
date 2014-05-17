@@ -19,9 +19,9 @@ from django.test.utils import override_settings
 
 from nose.tools import eq_
 
-from richard.suggestions import utils
-from richard.suggestions.models import Suggestion
-from richard.suggestions.tests import suggestion
+from suggestions import utils
+from suggestions.models import Suggestion
+from suggestions.tests import suggestion
 
 
 class TestMarkIfSpam(TestCase):

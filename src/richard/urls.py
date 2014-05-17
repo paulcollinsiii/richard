@@ -24,8 +24,8 @@ from django.contrib import admin
 admin.autodiscover()
 admin.site.login = login_required(admin.site.login)
 
-from richard.pages.sitemaps import PageSitemap
-from richard.videos.sitemaps import (
+from pages.sitemaps import PageSitemap
+from videos.sitemaps import (
     CategorySitemap, SpeakerSitemap, VideoSitemap)
 
 
@@ -39,7 +39,7 @@ sitemaps = {
 urlpatterns = patterns(
     '',
 
-    url(r'', include('richard.base.urls')),
+    url(r'', include('base.urls')),
 
     (r'^sitemap\.xml$', 'django.contrib.sitemaps.views.sitemap',
      {'sitemaps': sitemaps}),
@@ -47,9 +47,9 @@ urlpatterns = patterns(
     url(r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^pages/', include('richard.pages.urls')),
-    url(r'^suggestions/', include('richard.suggestions.urls')),
-    url(r'', include('richard.videos.urls')),
+    url(r'^pages/', include('pages.urls')),
+    url(r'^suggestions/', include('suggestions.urls')),
+    url(r'', include('videos.urls')),
 
     url(r'', include('django_browserid.urls')),
 )

@@ -23,7 +23,7 @@ from django.shortcuts import get_object_or_404
 from django.utils.feedgenerator import Rss201rev2Feed
 from django.utils.translation import ugettext as _
 
-from richard.videos.models import Speaker, Category, Video
+from videos.models import Speaker, Category, Video
 
 
 class MediaRSSFeed(Rss201rev2Feed):

@@ -21,9 +21,9 @@ from django.test import TestCase
 
 from nose.tools import eq_
 
-from richard.videos.feeds import CategoryFeed
-from richard.videos.models import Video
-from richard.videos.tests import category, video, speaker
+from videos.feeds import CategoryFeed
+from videos.models import Video
+from videos.tests import category, video, speaker
 
 
 class FeedTest(TestCase):

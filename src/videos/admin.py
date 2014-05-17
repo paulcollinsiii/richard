@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.contrib.admin import SimpleListFilter
 from django.utils.translation import ugettext_lazy as _
 
-from richard.videos.models import (Video, Category, Speaker, Tag,
+from videos.models import (Video, Category, Speaker, Tag,
                                    Language, RelatedUrl)
 
 

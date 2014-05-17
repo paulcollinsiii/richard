@@ -15,7 +15,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 from django.conf import settings
 
-from richard.notifications.models import Notification
+from notifications.models import Notification
 
 
 def base(request):

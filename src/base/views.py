@@ -21,9 +21,9 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.utils.http import is_safe_url
 
-from richard.base.models import Profile
-from richard.suggestions.models import Suggestion
-from richard.videos.models import Video, Category, Speaker, Tag
+from base.models import Profile
+from suggestions.models import Suggestion
+from videos.models import Video, Category, Speaker, Tag
 
 
 def home(request):

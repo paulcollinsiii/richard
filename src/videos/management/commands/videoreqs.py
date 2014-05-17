@@ -19,7 +19,7 @@ import json
 from django.db.models import fields
 from django.core.management.base import BaseCommand
 
-from richard.videos.models import Video
+from videos.models import Video
 
 
 class Command(BaseCommand):

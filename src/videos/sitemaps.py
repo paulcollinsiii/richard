@@ -16,7 +16,7 @@
 
 from django.contrib.sitemaps import GenericSitemap
 
-from richard.videos.models import Category, Speaker, Video
+from videos.models import Category, Speaker, Video
 
 
 CategorySitemap = GenericSitemap({'queryset': Category.objects.all()})

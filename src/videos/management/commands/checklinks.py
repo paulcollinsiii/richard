@@ -19,7 +19,7 @@ from collections import Counter
 from optparse import make_option
 from django.core.management.base import BaseCommand, CommandError
 
-from richard.videos.models import Video, VideoUrlStatus
+from videos.models import Video, VideoUrlStatus
 
 
 class Command(BaseCommand):

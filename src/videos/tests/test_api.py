@@ -25,9 +25,9 @@ from django.utils.encoding import smart_text
 from nose.tools import eq_
 from rest_framework.authtoken.models import Token
 
-from richard.videos.tests import category, language, speaker, tag, video
-from richard.videos.models import Video
-from richard.videos import urls as video_urls_module
+from videos.tests import category, language, speaker, tag, video
+from videos.models import Video
+from videos import urls as video_urls_module
 
 
 class TestNoAPI(TestCase):

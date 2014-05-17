@@ -16,7 +16,7 @@
 
 from haystack import indexes
 
-from richard.videos.models import Video
+from videos.models import Video
 
 
 class VideoIndex(indexes.SearchIndex, indexes.Indexable):

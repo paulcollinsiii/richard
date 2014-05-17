@@ -32,7 +32,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from rest_framework import serializers
 
-from richard.videos.utils import generate_unique_slug
+from videos.utils import generate_unique_slug
 
 
 MIMETYPES_MAP = {

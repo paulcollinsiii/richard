@@ -16,8 +16,8 @@
 
 from django.test import TestCase
 
-from richard.suggestions.tests import suggestion
-from richard.suggestions.models import Suggestion
+from suggestions.tests import suggestion
+from suggestions.models import Suggestion
 
 
 class TestSuggestion(TestCase):

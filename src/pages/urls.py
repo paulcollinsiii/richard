@@ -18,7 +18,7 @@ from django.conf.urls import patterns, url
 
 
 urlpatterns = patterns(
-    'richard.pages.views',
+    'pages.views',
 
     url(r'^(?P<page>[\w-]+)/?$', 'pages_view', name='pages-page'),
     )

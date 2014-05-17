@@ -16,8 +16,8 @@
 
 import itertools
 
-from richard.base.tests import with_save
-from richard.suggestions.models import Suggestion
+from base.tests import with_save
+from suggestions.models import Suggestion
 
 
 _count = itertools.count()

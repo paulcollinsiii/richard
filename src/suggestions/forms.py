@@ -16,7 +16,7 @@
 
 from django.forms import ModelForm
 
-from richard.suggestions.models import Suggestion
+from suggestions.models import Suggestion
 
 
 class SuggestionForm(ModelForm):

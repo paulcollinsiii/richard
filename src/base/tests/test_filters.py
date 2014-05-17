@@ -18,8 +18,8 @@ import unittest
 
 from nose.tools import eq_
 
-from richard.base.templatetags.batch import batch
-from richard.base.templatetags.duration import duration
+from base.templatetags.batch import batch
+from base.templatetags.duration import duration
 
 
 class BatchFilterTest(unittest.TestCase):
