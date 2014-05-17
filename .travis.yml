@@ -13,7 +13,8 @@ install:
 #  - 'if ( test -n "$DJANGO" ); then pip install $DJANGO; fi'
 
 script:
-  - 'python manage.py test'
+  - 'cd ./src'
+  - 'python manage.py test --settings richard.settings.testing'
 
 notifications:
   irc:
