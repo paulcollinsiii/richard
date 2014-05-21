@@ -16,7 +16,7 @@ Enabling the API
 ================
 
 The API is disabled by default. To enable the API, add this to your
-`richard/settings_local.py` file::
+`src/richard/settings/user_settings.py` file::
 
     API = True
 

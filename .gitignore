@@ -5,11 +5,11 @@
 *~
 .env
 *.db
-richard/settings_local.py
 venv
 whoosh_index
 
 docs/_build/
+src/richard/settings/user_*.py
 /dist/
 /static/
 /venv/

@@ -124,15 +124,15 @@ go for it!
 Configuration
 =============
 
-Default configuration for the project is in ``richard/settings.py``.
+Default configuration for the project is in ``src/richard/settings/base.py``.
 
-Copy ``richard/settings_local.py-dist`` to
-``richard/settings_local.py``.
+Copy ``src/richard/settings/local_dev.py`` to
+``src/richard/settings/user_settings.py``.
 
-``richard/settings_local.py`` will hold any configuration that is
-specific to your site. In addition to the things that are in the file,
-you can override any settings in ``richard/settings.py`` by specifying
-them in ``richard/settings_local.py``.
+``src/richard/settings/user_settings.py`` will hold any configuration that is
+specific to your site. In addition to the things that are in the file, you can
+override any settings in ``src/richard/settings/base.py`` by specifying them in
+``src/richard/settings/user_settings.py``.
 
 Edit that file and follow the instructions in the configuration.
 
@@ -233,7 +233,7 @@ First install psycopg2::
     $ pip install psycopg2
 
 Next, create the database and user role you're going to use. Update
-the ``richard/settings_local.py`` with the values you pick.
+the ``src/richard/settings/user_settings.py`` with the values you pick.
 
 .. todo:: instructions for running with Heroku and other PaaS systems
 
