@@ -69,7 +69,7 @@ I suggest a directory hierarchy along the lines of the following::
 
     richard/            # untarred tarball, git clone, etc
       |- docs/          # richard docs
-      |- richard/       # richard django project code
+      |- src/           # richard django project code
       |- ...
       |
       |- bin/           # any site-specific scripts you need
@@ -105,7 +105,7 @@ activate it and install requirements::
 
     $ virtualenv ./venv/
     $ . ./venv/bin/activate
-    $ pip install -r richard/requirements/base.txt
+    $ pip install -e .\[postgresql\]
 
 
 .. Note::
@@ -132,7 +132,8 @@ Copy ``src/richard/settings/local_dev.py`` to
 ``src/richard/settings/user_settings.py`` will hold any configuration that is
 specific to your site. In addition to the things that are in the file, you can
 override any settings in ``src/richard/settings/base.py`` by specifying them in
-``src/richard/settings/user_settings.py``.
+``src/richard/settings/user_settings.py``. Note that ``user_*.py`` settings
+files are ignored in the ``.gitignore`` file
 
 Edit that file and follow the instructions in the configuration.
 
@@ -228,11 +229,7 @@ Setting up database (postgresql)
 
 Now you need to set up a database where richard will store its data.
 
-First install psycopg2::
-
-    $ pip install psycopg2
-
-Next, create the database and user role you're going to use. Update
+Create the database and user role you're going to use. Update
 the ``src/richard/settings/user_settings.py`` with the values you pick.
 
 .. todo:: instructions for running with Heroku and other PaaS systems
