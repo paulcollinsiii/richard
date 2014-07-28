@@ -15,3 +15,5 @@ docs/_build/
 *.egg-info/
 
 .ropeproject
+.vagrant/
+src/richard/static/
